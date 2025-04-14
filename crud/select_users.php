@@ -4,7 +4,7 @@ require_once '../env.php';
 // TODO: lib/Databaseクラスの読み込み
 require_once '../lib/Database.php';
 
-$users = get();
+$users = get($_GET['limit'] ?? 50);
 
 function get($limit = 50)
 {
@@ -12,7 +12,7 @@ function get($limit = 50)
         // TODO: DB接続
         $pdo = Database::getInstance();
         // TODO: SQL作成
-        $sql = "SELECT * FROM users";
+        $sql = "SELECT * FROM users LIMIT $limit";
         // TODO: Userデータを取得
         $stmt = $pdo->query($sql);
         // TODO: Userデータを取得
