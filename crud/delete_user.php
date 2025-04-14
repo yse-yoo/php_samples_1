@@ -14,7 +14,7 @@ function delete($id)
     $pdo = Database::getInstance();
     // TODO: 指定したidでユーザデータを削除するSQLを作成
     // プレースホルダー(:id)
-    $sql = "";
+    $sql = "DELETE FROM users WHERE id = :id";
 
     try {
         // SQLを設定して、プリペアードステートメントを生成
