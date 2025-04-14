@@ -4,7 +4,7 @@ require_once '../lib/Database.php';
 
 if (!empty($_GET['id'])) {
     // TODO: GETパラメータからユーザIDを取得
-    $user_id = 0;
+    $user_id = $_GET['id'];
     $user = find($user_id);
 }
 
