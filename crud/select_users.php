@@ -12,7 +12,7 @@ function get($limit = 50)
         // TODO: DB接続
         $pdo = Database::getInstance();
         // TODO: SQL作成
-        $sql = "SELECT * FROM users LIMIT $limit";
+        $sql = "SELECT * FROM users ORDER BY id DESC LIMIT $limit";
         // TODO: Userデータを取得
         $stmt = $pdo->query($sql);
         // TODO: Userデータを取得
