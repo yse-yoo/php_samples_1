@@ -23,6 +23,12 @@ function find($id)
         $stmt->execute(['id' => $id]);
         // TODO: Userデータを１件取得
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        // SQLインジェクション
+        // $sql = "SELECT * FROM users WHERE id = $id";
+        // $stmt = $pdo->query($sql);
+        // $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
         return $user;
     } catch (PDOException $e) {
         error_log($e->getMessage());
